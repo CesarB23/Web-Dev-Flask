@@ -1,29 +1,32 @@
-h1{
-    font-size: 40px;
-    font-family: Roboto;
-    font-weight: normal;
-    color: blue;
-    text-align: center;
+/*Giving Style by general tag, all the tags will inherit this style*/
+h1 {
+  font-size: 40px;
+  font-family: Roboto;
+  font-weight: normal;
+  color: blue;
+  text-align: center;
 }
-#banner{
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
+/*Giving style specyfing id, id must be unique*/
+#banner {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
 }
-h2{
-    font-family: Roboto;
-    font-size: 32px;
-    color: black;
-    text-align: center;
-    font-weight: normal;
+h2 {
+  font-family: Roboto;
+  font-size: 32px;
+  color: black;
+  text-align: center;
+  font-weight: normal;
 }
-.bodytext{
-    font-family: Roboto;
-    color: black;
-    text-align: justify;
-    font-size: 20px;
+/*Giving style specfying a class, multiple tags can have a same class*/
+.bodytext {
+  font-family: Roboto;
+  color: black;
+  text-align: justify;
+  font-size: 20px;
 }
-#container{
-    max-width: 720px;
-    margin: 0 auto 0 auto;
+#container {
+  max-width: 720px;
+  margin: 0 auto 0 auto;
 }
