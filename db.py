@@ -1,4 +1,5 @@
 from sqlalchemy import create_engine, text
+import os
 
 # print(sqlalchemy.__version__)
 connection_db_string = "mysql+pymysql://9my4d87sby3jbk1w8y16:pscale_pw_eNYMWxFGvDzP63KFSLVK4M96FF4uy5m3CaPzWERDTZM@aws.connect.psdb.cloud/jobapplicationapp?charset=utf8mb4"
