@@ -1,10 +1,12 @@
 from sqlalchemy import create_engine, text
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 # print(sqlalchemy.__version__)
-connection_db_string = "mysql+pymysql://esaoilcws7yiu3pd3g5u:pscale_pw_4P2q3gEil4HLhITMtf1YjxSbMN7ihcq89M1KxgoCjIB@aws.connect.psdb.cloud/jobapplicationapp?charset=utf8mb4"
+CONNECTION_DB_STRING = os.getenv("CONNECTION_DB_STRING")
 engine = create_engine(
-    connection_db_string,
+    CONNECTION_DB_STRING,
     pool_pre_ping=True,
     connect_args={
         "ssl": {
@@ -12,7 +14,7 @@ engine = create_engine(
         }
     }
 )
-
+print(CONNECTION_DB_STRING)
 def load_jobs_fromdb():
     with engine.connect() as conn:
         result = conn.execute(text("select * from jobs"))
@@ -21,3 +23,17 @@ def load_jobs_fromdb():
         for row in result.all():
             jobs.append(dict(zip(column_names, row)))
         return jobs
+
+def load_job_fromdb(id):
+ with engine.connect() as conn:
+    result = conn.execute(
+      text(f"SELECT * FROM jobs WHERE id={id}"))
+    rows = result.all()
+    columnn_names = result.keys()
+    if len(rows) == 0:
+       return None
+    else:
+       return dict(zip(columnn_names,rows[0]))   
+    
+    
+
