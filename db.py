@@ -14,7 +14,7 @@ engine = create_engine(
         }
     }
 )
-print(CONNECTION_DB_STRING)
+
 def load_jobs_fromdb():
     with engine.connect() as conn:
         result = conn.execute(text("select * from jobs"))
@@ -36,4 +36,18 @@ def load_job_fromdb(id):
        return dict(zip(columnn_names,rows[0]))   
     
     
-
+def add_application_to_db(job_id,data):
+    with engine.connect() as conn:
+    # result = conn.execute(text("select * from applications"))
+    # print(result.keys())
+        query = text("INSERT INTO applications(job_id,full_name,emal,linkedin_url,education,worK_experience,resume_url) VALUES(:job_id,:full_name,:email,:linkedin_url,:education,:work_experience,:resume_url)")
+        
+        values={'job_id': job_id,
+            'full_name':data['full_name'],
+            'email':data['email'],
+            'linkedin_url':data['linkedin_url'],
+            'education':data['education'],
+            'work_experience':data['work_experience'],
+            'resume_url':data['resume_url']}
+        
+        conn.execute(query,values)

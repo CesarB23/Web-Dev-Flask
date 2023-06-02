@@ -1,7 +1,7 @@
 <h4>
     Application Form
 </h4>
-<form action="/job/{{job['id']}}/apply">
+<form action="/job/{{job['id']}}/apply" method="post">
     <div class="mb-2">
         <label for="">Full Name</label><br>
         <input type="text" name="full_name" placeholder="Your Name">
@@ -11,7 +11,23 @@
     </div>
     <div class="mb-2">
         <label for="">LinkedIn URL</label><br>
-        <input type="text" name="url" id="" placeholder="https://linkedin.com">
+        <input type="text" name="linkedin_url" id="" placeholder="https://linkedin.com">
+    </div>
+    <div>
+        <label for="">Education</label><br>
+        <textarea name="education" id="" cols="60" rows="10">
+
+        </textarea>
+    </div>
+    <div>
+        <label for="">Workexpercience</label><br>
+        <textarea name="work_experience" id="" cols="60" rows="10">
+
+        </textarea>
+    </div>
+    <div class="mb-2">
+        <label for="">Resume URL</label><br>
+        <input type="text" name="resume_url" id="" placeholder="https://resumeurl.com">
     </div>
     <input type="submit">
 </form>
