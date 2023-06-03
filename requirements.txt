@@ -1,5 +1,5 @@
-Flask
+Flask==2.3.2
 gunicorn
-sqlalchemy
-pymysql
-python-dotenv
+sqlalchemy=2.0.15
+pymysql==1.0.3
+python-dotenv==1.0.0
