@@ -1,0 +1,11 @@
+version: "4.20.0"
+
+services:
+  flaskapp:
+    container_name: jobapp
+    image: cesar/jobapp
+    ports:
+      - "5000:5000"
+    build:
+      context: .
+      dockerfile: Dockerfile
