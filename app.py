@@ -8,7 +8,7 @@ def hello_world():
     jobs = load_jobs_fromdb()
     return render_template("home.html",
                            jobs=jobs, 
-                           company_name="Jovian")
+                           company_name="Computer Science")
 
 
 @app.route("/api/jobs")
